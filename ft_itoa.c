@@ -6,7 +6,7 @@
 /*   By: gupark <gupark@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/17 16:13:11 by gupark            #+#    #+#             */
-/*   Updated: 2022/01/17 16:15:23 by gupark           ###   ########.fr       */
+/*   Updated: 2022/02/01 23:32:52 by gupark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,6 @@
 
 void	ft_nbr(long long n, int len, char *r)
 {
-	int	i;
-
-	i = 0;
 	while (n)
 	{
 		r[len--] = 48 + (n % 10);
@@ -53,10 +50,10 @@ char	*ft_itoa(int n)
 		r[1] = '\0';
 		return (r);
 	}
-	r = (char *)malloc(len * sizeof(char) + 1);
+	r = (char *)malloc((len + 1) * sizeof(char));
 	if (!r)
 		return (NULL);
-	r[len--] = 0;
+	r[len--] = '\0';
 	nb = n;
 	if (nb < 0)
 	{

@@ -6,7 +6,7 @@
 /*   By: gupark <gupark@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/22 14:36:35 by gupark            #+#    #+#             */
-/*   Updated: 2022/01/19 22:13:05 by gupark           ###   ########.fr       */
+/*   Updated: 2022/01/30 19:04:23 by gupark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ char	*ft_strrchr(const char *str, int c)
 {
 	char	*pt;
 
-	pt = 0;
+	pt = NULL;
 	while (*str)
 	{
 		if (*str == c)

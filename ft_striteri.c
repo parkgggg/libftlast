@@ -6,7 +6,7 @@
 /*   By: gupark <gupark@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/17 16:02:57 by gupark            #+#    #+#             */
-/*   Updated: 2022/01/22 19:37:05 by gupark           ###   ########.fr       */
+/*   Updated: 2022/02/01 22:11:01 by gupark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 		return ;
 	while (s[i])
 	{
-		f(i, (s + i));
+		f(i, &s[i]);
 		i++;
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: gupark <gupark@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/14 14:59:28 by gupark            #+#    #+#             */
-/*   Updated: 2022/01/22 21:39:10 by gupark           ###   ########.fr       */
+/*   Updated: 2022/01/31 23:48:42 by gupark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 
 	l = ft_strlen(src);
 	i = 0;
+	if (!dst || !src)
+		return (0);
 	if (!size || size == 0)
 		return (l);
 	while (src[i] && i < size - 1)

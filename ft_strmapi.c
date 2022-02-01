@@ -6,7 +6,7 @@
 /*   By: gupark <gupark@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/17 16:15:43 by gupark            #+#    #+#             */
-/*   Updated: 2022/01/17 16:21:42 by gupark           ###   ########.fr       */
+/*   Updated: 2022/02/01 21:32:46 by gupark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	char	*r;
-	int		i;
+	char			*r;
+	unsigned int	i;
 
 	if (!s || !f)
 		return (NULL);
