@@ -6,7 +6,7 @@
 /*   By: gupark <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/27 18:33:24 by gupark            #+#    #+#             */
-/*   Updated: 2022/01/27 18:44:51 by gupark           ###   ########.fr       */
+/*   Updated: 2022/02/02 19:08:54 by gupark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	ft_is_separator(char c, char cr)
 	return (0);
 }
 
-int	ft_words(char *str, char c)
+int	ft_wordcheck(char *str, char c)
 {
 	int	i;
 	int	w;
@@ -38,7 +38,7 @@ int	ft_words(char *str, char c)
 	return (w);
 }
 
-void	ft_write_word(char *dest, char *src, char c)
+void	ft_setword(char *dest, char *src, char c)
 {
 	int	i;
 
@@ -51,7 +51,7 @@ void	ft_write_word(char *dest, char *src, char c)
 	dest[i] = '\0';
 }
 
-int	ft_write_split(char **split, char *str, char c)
+int	ft_setset(char **split, char *str, char c)
 {
 	int	i;
 	int	j;
@@ -71,7 +71,7 @@ int	ft_write_split(char **split, char *str, char c)
 			split[w] = (char *)malloc(sizeof(char) * (j + 1));
 			if (!(split + w))
 				return (0);
-			ft_write_word(split[w], str + i, c);
+			ft_setword(split[w], str + i, c);
 			i += j;
 			w++;
 		}
@@ -81,25 +81,25 @@ int	ft_write_split(char **split, char *str, char c)
 
 char	**ft_split(char const *s, char c)
 {
-	int		w;
-	char	**rtn;
+	int		numofw;
+	char	**words;
 
 	if (!s)
 		return (NULL);
-	w = ft_words((char *)s, c);
-	rtn = (char **)malloc(sizeof(char *) * (w + 1));
-	if (!rtn)
+	numofw = ft_wordcheck((char *)s, c);
+	words = (char **)malloc(sizeof(char *) * (numofw + 1));
+	if (!words)
 		return (NULL);
-	if (!(ft_write_split(rtn, (char *) s, c)))
+	if (!(ft_setset(words, (char *) s, c)))
 	{
-		w = 0;
-		while (rtn + w)
+		numofw = 0;
+		while (words + numofw)
 		{
-			free(rtn + w);
-			w++;
+			free(words + numofw);
+			numofw++;
 		}
-		free(rtn);
+		free(words);
 	}
-	rtn[w] = 0;
-	return (rtn);
+	words[numofw] = 0;
+	return (words);
 }
