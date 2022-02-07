@@ -6,14 +6,13 @@
 /*   By: gupark <gupark@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/16 17:06:39 by gupark            #+#    #+#             */
-/*   Updated: 2022/01/25 02:20:39 by gupark           ###   ########.fr       */
+/*   Updated: 2022/02/07 02:12:02 by gupark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-# include <string.h>
 # include <unistd.h>
 # include <stdlib.h>
 
